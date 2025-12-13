@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Battle Express - Atelier JPO</title>
+  <link rel="icon" type="image/png" href="assets/img/mds_logo_round.png">
+  <link rel="stylesheet" href="battle.css">
+</head>
+<body>
+  <a href="index.html" class="home-link">🏠 Accueil</a>
+  <a href="guideCodePen.html" class="guide-link">📖 Guide CodePen</a>
+
+  <div class="slide-indicator">
+    Slide <span id="currentSlide">1</span> / <span id="totalSlides">5</span>
+  </div>
+
+  <div class="container">
+    <!-- SLIDE 0: Accueil -->
+    <div class="slide active intro-slide">
+      <div class="emoji">🚀</div>
+      <h1>CODE BATTLE EXPRESS</h1>
+      <p class="subtitle">Atelier Développement Web + IA</p>
+      
+      <div class="start-info">
+        <p><strong>3 défis progressifs</strong> de 15 minutes</p>
+        <p style="margin-top: 15px;">Votre assistant : <strong>ChatGPT</strong></p>
+        <p style="margin-top: 15px;">Votre outil : <strong>CodePen.io</strong></p>
+      </div>
+
+      <div style="margin-top: 50px; font-size: 20px; color: rgba(255,255,255,0.8);">
+        Appuyez sur → pour commencer
+      </div>
+    </div>
+
+    <!-- SLIDE 1: Défi 1 -->
+    <div class="slide">
+      <div class="challenge-card">
+        <div class="challenge-header">
+          <div class="challenge-number">DÉFI 1/3</div>
+          <h2 class="challenge-title">
+            <span class="challenge-emoji">💳</span>
+            Ta Carte de Visite Web
+          </h2>
+          <p class="challenge-subtitle">Créez votre première page web personnalisée</p>
+        </div>
+
+        <div class="objectives">
+          <h3>✨ Objectifs :</h3>
+          <div class="objective-item">Votre nom en GROS titre</div>
+          <div class="objective-item">Votre passion en sous-titre</div>
+          <div class="objective-item">Votre emoji préféré</div>
+          <div class="objective-item">Un fond coloré de votre choix</div>
+        </div>
+
+        <div class="help-section">
+          <h3>💡 Aide - Prompt ChatGPT :</h3>
+          <div class="prompt-box">
+            Crée-moi le code HTML/CSS pour une carte de visite avec mon nom <strong>[TON NOM]</strong>, ma passion <strong>[TA PASSION]</strong> et un fond <strong>[COULEUR]</strong>
+          </div>
+          <p style="margin-top: 15px; color: #92400e; font-size: 16px;">
+            📌 Remplacez les parties entre crochets par vos vraies informations !
+          </p>
+        </div>
+
+        <div class="timer-section">
+          <span>⏱️</span>
+          <span>Temps :</span>
+          <span class="countdown">15:00</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: Défi 2 -->
+    <div class="slide">
+      <div class="challenge-card">
+        <div class="challenge-header">
+          <div class="challenge-number">DÉFI 2/3</div>
+          <h2 class="challenge-title">
+            <span class="challenge-emoji">🎨</span>
+            Bouton Magique
+          </h2>
+          <p class="challenge-subtitle">Créez un bouton interactif avec des effets au survol</p>
+        </div>
+
+        <div class="objectives">
+          <h3>✨ Objectifs :</h3>
+          <div class="objective-item">Un bouton qui change de couleur au survol</div>
+          <div class="objective-item">Une animation cool</div>
+          <div class="objective-item">Un message personnalisé sur le bouton</div>
+        </div>
+
+        <div class="help-section">
+          <h3>💡 Aide - Prompt ChatGPT (Étape 1) :</h3>
+          <div class="prompt-box">
+            Crée un bouton HTML avec effet hover qui change de couleur au survol de la souris
+          </div>
+        </div>
+
+        <div class="strategy-section">
+          <h3>🎯 Stratégie :</h3>
+          <ul class="strategy-steps">
+            <li>Demandez le code de base à ChatGPT</li>
+            <li>Testez-le dans CodePen</li>
+            <li>Demandez à l'IA de changer les couleurs</li>
+            <li>Demandez d'ajouter une animation différente</li>
+          </ul>
+        </div>
+
+        <div class="timer-section">
+          <span>⏱️</span>
+          <span>Temps :</span>
+          <span class="countdown">15:00</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: Défi 3 -->
+    <div class="slide">
+      <div class="challenge-card">
+        <div class="challenge-header">
+          <div class="challenge-number">DÉFI 3/3 - FINALE</div>
+          <h2 class="challenge-title">
+            <span class="challenge-emoji">🏆</span>
+            Battle Créative
+          </h2>
+          <p class="challenge-subtitle">Choisissez votre mission et créez le projet le plus stylé !</p>
+        </div>
+
+        <div class="options-section">
+          <h3 style="text-align: center; margin-bottom: 20px; font-size: 24px; color: #2d3748;">
+            Choisissez votre mission :
+          </h3>
+          
+          <div class="option-card">
+            <h4>🎮 Option A : Card de Jeu Vidéo</h4>
+            <p>Image du jeu + Titre + Note /10 + Description</p>
+          </div>
+
+          <div class="option-card">
+            <h4>🎵 Option B : Player de Musique</h4>
+            <p>Titre de chanson + Artiste + Bouton Play stylé</p>
+          </div>
+
+          <div class="option-card">
+            <h4>🎬 Option C : Affiche de Film</h4>
+            <p>Titre + Tagline + Image + Note /10</p>
+          </div>
+        </div>
+
+        <div class="strategy-section">
+          <h3>🎯 Stratégie Gagnante :</h3>
+          <ul class="strategy-steps">
+            <li>Choisissez votre mission (A, B ou C)</li>
+            <li>Demandez à l'IA le code de base</li>
+            <li>Personnalisez au maximum (couleurs, images, textes)</li>
+            <li>Ajoutez des effets visuels cool (ombres, animations)</li>
+          </ul>
+        </div>
+
+        <div style="text-align: center;">
+          <div class="prize-badge">
+            🏆 Le meilleur projet gagne un prix !
+          </div>
+        </div>
+
+        <div class="timer-section">
+          <span>⏱️</span>
+          <span>Temps :</span>
+          <span class="countdown">15:00</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4: Conclusion -->
+    <div class="slide intro-slide">
+      <div class="emoji">🎉</div>
+      <h1 style="font-size: 56px;">Bravo à tous !</h1>
+      <p class="subtitle">Vous êtes maintenant des développeurs web !</p>
+      
+      <div class="start-info" style="max-width: 700px;">
+        <p style="font-size: 22px; line-height: 1.6;">
+          Aujourd'hui vous avez découvert comment l'IA peut être votre assistant de code.
+        </p>
+        <p style="font-size: 22px; margin-top: 20px; line-height: 1.6;">
+          C'est exactement comme ça que travaillent les développeurs professionnels en 2025 ! 🚀
+        </p>
+      </div>
+
+      <div style="margin-top: 50px; font-size: 28px; color: white; font-weight: bold;">
+        Des questions ? 💬
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="navigation">
+    <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">← Précédent</button>
+    <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Suivant →</button>
+  </div>
+
+  <script src="battle.js"></script>
+</body>
+</html>
