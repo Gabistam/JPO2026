@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction HTML/CSS - My Digital School</title>
+  <link rel="icon" type="image/png" href="assets/img/mds_logo_round.png">
+  <link rel="stylesheet" href="index.css">
+  <style>
+    .intro-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .intro-hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 20px;
+      color: white;
+      margin-bottom: 3rem;
+    }
+
+    .intro-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .intro-hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .content-section {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .content-section h2 {
+      color: #667eea;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+
+    .content-section p {
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .image-container {
+      text-align: center;
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: #f8f9fa;
+      border-radius: 10px;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .image-caption {
+      margin-top: 1rem;
+      font-style: italic;
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin: 1.5rem 0;
+      border-left: 4px solid #ff6b6b;
+    }
+
+    .highlight-box h3 {
+      margin-top: 0;
+      color: #d63031;
+    }
+
+    .code-example {
+      background: #282c34;
+      color: #abb2bf;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+      font-family: 'Courier New', monospace;
+      overflow-x: auto;
+    }
+
+    .code-example .tag {
+      color: #e06c75;
+    }
+
+    .code-example .attribute {
+      color: #d19a66;
+    }
+
+    .code-example .value {
+      color: #98c379;
+    }
+
+    .key-points {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .key-point {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 10px;
+      border-left: 4px solid #667eea;
+    }
+
+    .key-point h4 {
+      margin-top: 0;
+      color: #667eea;
+      font-size: 1.1rem;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: bold;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .back-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .emoji-icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="intro-container">
+    <!-- Hero -->
+    <div class="intro-hero">
+      <h1>🌐 Introduction à HTML & CSS</h1>
+      <p>Les fondations du développement web</p>
+    </div>
+
+    <!-- Section 1: Qu'est-ce que le développement web ? -->
+    <div class="content-section">
+      <h2>🎯 Qu'est-ce que le développement web ?</h2>
+      <p>
+        Le développement web, c'est l'art de créer des sites et applications que vous utilisez tous les jours :
+        Instagram, YouTube, Netflix, TikTok... Tous ces sites sont construits avec des langages de programmation.
+      </p>
+
+      <div class="image-container">
+        <img src="assets/img/intro/Anatomie-du-web.webp" alt="Anatomie-du-web">
+        <p class="image-caption">Voici l'anatomie du web avec ses langages principaux</p>
+      </div>
+
+      <p>
+        Comme vous pouvez le voir sur le schéma, il existe de nombreux langages de programmation.
+        Aujourd'hui, nous allons nous concentrer sur les deux plus essentiels et indispensables au fonctionnement d'un site web pour débuter : <strong>HTML</strong> et <strong>CSS</strong>.
+      </p>
+    </div>
+
+    <!-- Section 2: HTML et CSS expliqués -->
+    <div class="content-section">
+      <h2>🏗️ HTML & CSS : Les deux piliers du web</h2>
+
+      <div class="key-points">
+        <div class="key-point">
+          <span class="emoji-icon">📝</span>
+          <h4>HTML (HyperText Markup Language)</h4>
+          <p>C'est le <strong>squelette</strong> de votre page web. Il définit la structure et le contenu : les titres, les paragraphes, les images, les liens...</p>
+        </div>
+
+        <div class="key-point">
+          <span class="emoji-icon">🎨</span>
+          <h4>CSS (Cascading Style Sheets)</h4>
+          <p>C'est le <strong>style</strong> de votre page. Il gère l'apparence : les couleurs, les tailles, les espacements, les animations...</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <h3>💡 Analogie simple</h3>
+        <p>
+          Imaginez construire une maison :
+        </p>
+        <ul>
+          <li><strong>HTML</strong> = Les murs, les fenêtres, les portes (la structure)</li>
+          <li><strong>CSS</strong> = La peinture, la décoration, le mobilier (le design)</li>
+        </ul>
+      </div>
+
+      <div class="code-example">
+<span class="tag">&lt;h1&gt;</span>Bienvenue sur mon site<span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;p</span> <span class="attribute">class</span>=<span class="value">"intro"</span><span class="tag">&gt;</span>Ceci est mon premier paragraphe en HTML<span class="tag">&lt;/p&gt;</span>
+
+<span class="tag">&lt;style&gt;</span>
+  h1 {
+    color: blue;
+    font-size: 32px;
+  }
+  .intro {
+    background-color: yellow;
+  }
+<span class="tag">&lt;/style&gt;</span>
+      </div>
+    </div>
+
+    <!-- Section 3: Frontend vs Backend -->
+    <div class="content-section">
+      <h2>🔄 Frontend & Backend : Deux mondes complémentaires</h2>
+
+      <div class="image-container">
+        <img src="assets/img/intro/Front_back_fullstack.webp"
+         alt="Front_back_fullstack">
+        <p class="image-caption">La distinction entre développement Frontend et Backend</p>0
+      </div>
+
+      <div class="key-points">
+        <div class="key-point">
+          <span class="emoji-icon">👁️</span>
+          <h4>Frontend (ce que vous voyez)</h4>
+          <p>
+            Tout ce qui s'affiche dans votre navigateur. C'est la partie visible avec laquelle vous interagissez.
+          </p>
+          <p><strong>Langages :</strong> HTML, CSS, JavaScript</p>
+        </div>
+
+        <div class="key-point">
+          <span class="emoji-icon">⚙️</span>
+          <h4>Backend (ce qui est caché)</h4>
+          <p>
+            Le serveur, la base de données, la logique métier. C'est ce qui fait fonctionner l'application en coulisses.
+          </p>
+          <p><strong>Langages :</strong> PHP, Python, Node.js, Java...</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <h3>🎯 Aujourd'hui : Focus sur le Frontend</h3>
+        <p>
+          Dans cet atelier, vous allez découvrir le <strong>développement frontend</strong> en créant des pages web
+          visuelles et interactives avec HTML et CSS. C'est le point de départ idéal pour tout développeur web !
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 4: Pourquoi apprendre HTML/CSS ? -->
+    <div class="content-section">
+      <h2>🚀 Pourquoi apprendre HTML & CSS ?</h2>
+
+      <div class="key-points">
+        <div class="key-point">
+          <span class="emoji-icon">✅</span>
+          <h4>Facile à apprendre</h4>
+          <p>Pas besoin de connaissances préalables. Les résultats sont immédiats et visuels.</p>
+        </div>
+
+        <div class="key-point">
+          <span class="emoji-icon">🌍</span>
+          <h4>Universel</h4>
+          <p>Tous les sites web du monde utilisent HTML et CSS. C'est la base incontournable.</p>
+        </div>
+
+        <div class="key-point">
+          <span class="emoji-icon">💼</span>
+          <h4>Carrière prometteuse</h4>
+          <p>Les développeurs web sont très recherchés. C'est un métier d'avenir avec de belles opportunités.</p>
+        </div>
+
+        <div class="key-point">
+          <span class="emoji-icon">🎨</span>
+          <h4>Créativité</h4>
+          <p>Donnez vie à vos idées et créez des interfaces magnifiques et fonctionnelles.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to action -->
+    <div class="content-section" style="text-align: center; background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+      <h2>🎓 Prêt à vous lancer ?</h2>
+      <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+        Maintenant que vous comprenez les bases, il est temps de passer à la pratique !
+      </p>
+      <a href="index.html" class="back-button">← Retour aux ateliers</a>
+    </div>
+  </div>
+</body>
+</html>
