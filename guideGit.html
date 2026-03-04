@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guide Git & GitHub - Prise en Main</title>
+  <link rel="stylesheet" href="guideCodePen.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #1a1a2e 0%, #24292f 100%);
+    }
+    .content-card::before {
+      background: linear-gradient(90deg, #f05032, #24292f, #f05032);
+      background-size: 200% 100%;
+      animation: gradient 3s linear infinite;
+    }
+    .section-title { color: #1a1a2e; }
+    .step-item { border-left-color: #f05032; }
+    .step-number { background: #f05032; }
+    .step-content h3 { color: #1a1a2e; }
+    .highlight-box {
+      background: linear-gradient(135deg, #fff0ed, #ffd6cc);
+      border-color: #f05032;
+    }
+    .highlight-title { color: #b22a10; }
+    .highlight-text { color: #7a1a05; }
+    .nav-btn { color: #f05032; }
+
+    .diff-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 25px 0;
+    }
+    .diff-card {
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+    }
+    .diff-git {
+      background: #fff0ed;
+      border: 2px solid #f05032;
+    }
+    .diff-github {
+      background: #f0f4ff;
+      border: 2px solid #24292f;
+    }
+    .diff-emoji { font-size: 40px; margin-bottom: 10px; }
+    .diff-title { font-size: 22px; font-weight: bold; margin-bottom: 10px; }
+    .diff-git .diff-title { color: #b22a10; }
+    .diff-github .diff-title { color: #24292f; }
+    .diff-text { font-size: 16px; line-height: 1.5; }
+    .diff-git .diff-text { color: #7a1a05; }
+    .diff-github .diff-text { color: #3d4451; }
+
+    .flow-container { margin: 25px 0; }
+    .flow-step {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 12px;
+    }
+    .flow-badge {
+      background: #f05032;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 15px;
+      white-space: nowrap;
+      min-width: 120px;
+      text-align: center;
+    }
+    .flow-arrow { font-size: 24px; color: #94a3b8; }
+    .flow-desc { font-size: 17px; color: #475569; }
+
+    .terminal-demo {
+      background: #1e293b; border-radius: 12px; overflow: hidden; margin: 20px 0;
+    }
+    .terminal-bar {
+      background: #0f172a; padding: 12px 20px; display: flex; align-items: center; gap: 8px;
+    }
+    .terminal-bar span { color: #94a3b8; font-size: 14px; margin-left: 10px; }
+    .terminal-body { padding: 20px; font-family: monospace; font-size: 15px; line-height: 2; }
+    .t-prompt { color: #34d399; }
+    .t-cmd { color: #e2e8f0; }
+    .t-key { color: #f05032; font-weight: bold; }
+    .t-output { color: #94a3b8; }
+    .t-comment { color: #60a5fa; }
+    .kbd {
+      background: #1e293b; color: #e2e8f0; padding: 4px 10px; border-radius: 6px;
+      font-family: monospace; font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="home-link">🏠 Accueil</a>
+
+  <div class="slide-indicator">
+    Slide <span id="currentSlide">1</span> / <span id="totalSlides">6</span>
+  </div>
+
+  <div class="container">
+
+    <!-- SLIDE 0: Introduction -->
+    <div class="slide active intro-slide">
+      <div class="emoji">🐙</div>
+      <h1>Git & GitHub</h1>
+      <p class="subtitle">Sauvegardez et partagez votre code</p>
+
+      <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 30px 50px; border-radius: 20px; margin-top: 50px;">
+        <p style="font-size: 28px; color: white; font-weight: bold;">
+          Votre code ne disparaît plus jamais 🎉
+        </p>
+        <p style="font-size: 22px; color: rgba(255,255,255,0.9); margin-top: 20px;">
+          Travaillez en équipe · Revenez en arrière · Partagez vos projets
+        </p>
+      </div>
+
+      <div style="margin-top: 50px; font-size: 20px; color: rgba(255,255,255,0.8);">
+        Appuyez sur → pour commencer
+      </div>
+    </div>
+
+    <!-- SLIDE 1: Git vs GitHub -->
+    <div class="slide">
+      <div class="content-card">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="section-emoji">🤔</span>
+            Git vs GitHub
+          </h2>
+          <p class="section-subtitle">Deux choses différentes, souvent confondues !</p>
+        </div>
+
+        <div class="diff-grid">
+          <div class="diff-card diff-git">
+            <div class="diff-emoji">🔧</div>
+            <div class="diff-title">Git</div>
+            <div class="diff-text">
+              Un <strong>outil</strong> installé sur votre ordinateur.<br><br>
+              Il enregistre l'historique de vos modifications de code.
+            </div>
+          </div>
+          <div class="diff-card diff-github">
+            <div class="diff-emoji">🐙</div>
+            <div class="diff-title">GitHub</div>
+            <div class="diff-text">
+              Un <strong>site web</strong> dans le cloud.<br><br>
+              Il héberge vos projets Git pour les partager et les sauvegarder en ligne.
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <div class="highlight-title">🎯 L'analogie parfaite</div>
+          <div class="highlight-text">
+            Git = votre <strong>journal intime</strong> (sur votre bureau)<br>
+            GitHub = la <strong>bibliothèque</strong> où vous déposez votre journal pour le partager
+          </div>
+        </div>
+
+        <div style="background: #f1f5f9; border-radius: 12px; padding: 25px; margin-top: 20px; text-align: center;">
+          <p style="font-size: 20px; color: #475569;">
+            💡 On utilise <strong>Git</strong> dans le terminal de VSCode,<br>
+            et on pousse notre code sur <strong>GitHub</strong> pour le sauvegarder en ligne.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: Les 3 commandes essentielles -->
+    <div class="slide">
+      <div class="content-card">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="section-emoji">⚡</span>
+            Les 3 Commandes Essentielles
+          </h2>
+          <p class="section-subtitle">C'est tout ce dont vous avez besoin pour commencer</p>
+        </div>
+
+        <div class="flow-container">
+          <div class="flow-step">
+            <div class="flow-badge">git add .</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-desc">Je <strong>sélectionne</strong> tous mes fichiers modifiés pour les préparer</div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-badge">git commit</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-desc">Je <strong>prends une photo</strong> de mon code à cet instant avec un message</div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-badge">git push</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-desc">J'<strong>envoie</strong> cette photo sur GitHub pour la sauvegarder en ligne</div>
+          </div>
+        </div>
+
+        <div class="terminal-demo">
+          <div class="terminal-bar">
+            <div class="mockup-dot dot-red"></div>
+            <div class="mockup-dot dot-yellow"></div>
+            <div class="mockup-dot dot-green"></div>
+            <span>Terminal VSCode</span>
+          </div>
+          <div class="terminal-body">
+            <div><span class="t-comment"># 1. Je prépare mes fichiers</span></div>
+            <div><span class="t-prompt">$ </span><span class="t-key">git add .</span></div>
+            <br>
+            <div><span class="t-comment"># 2. Je sauvegarde avec un message</span></div>
+            <div><span class="t-prompt">$ </span><span class="t-key">git commit -m</span><span class="t-cmd"> "Ajout de la page d'accueil"</span></div>
+            <br>
+            <div><span class="t-comment"># 3. J'envoie sur GitHub</span></div>
+            <div><span class="t-prompt">$ </span><span class="t-key">git push</span></div>
+            <div class="t-output">✓ Code envoyé sur GitHub !</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: Cloner un projet -->
+    <div class="slide">
+      <div class="content-card">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="section-emoji">📥</span>
+            Récupérer un Projet : git clone
+          </h2>
+          <p class="section-subtitle">Télécharger un projet depuis GitHub sur votre ordi</p>
+        </div>
+
+        <div class="steps-container">
+          <div class="step-item">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Allez sur le projet GitHub</h3>
+              <p>Ouvrez la page du projet sur <strong>github.com</strong></p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Copiez l'URL</h3>
+              <p>Cliquez sur le bouton vert <strong>"Code"</strong> → copiez l'URL HTTPS</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Clonez dans le terminal</h3>
+              <p>Dans le terminal VSCode, tapez :<br>
+              <span class="kbd">git clone [l'URL copiée]</span></p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>Ouvrez le dossier créé</h3>
+              <p><strong>Fichier → Ouvrir un dossier</strong> et sélectionnez le dossier téléchargé</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="terminal-demo">
+          <div class="terminal-bar">
+            <div class="mockup-dot dot-red"></div>
+            <div class="mockup-dot dot-yellow"></div>
+            <div class="mockup-dot dot-green"></div>
+            <span>Terminal VSCode</span>
+          </div>
+          <div class="terminal-body">
+            <div><span class="t-prompt">$ </span><span class="t-key">git clone</span><span class="t-cmd"> https://github.com/utilisateur/mon-projet.git</span></div>
+            <div class="t-output">Cloning into 'mon-projet'...</div>
+            <div class="t-output">✓ Projet téléchargé !</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4: Problèmes fréquents -->
+    <div class="slide">
+      <div class="content-card">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="section-emoji">🆘</span>
+            Problèmes Fréquents
+          </h2>
+          <p class="section-subtitle">Solutions rapides aux soucis les plus courants</p>
+        </div>
+
+        <div class="problems-container">
+          <div class="problem-item">
+            <div class="problem-title">❌ "git : commande introuvable"</div>
+            <div class="problem-solution">
+              <strong>Solution :</strong><br>
+              → Git n'est pas installé sur votre machine<br>
+              → Allez sur <strong>git-scm.com</strong> et téléchargez Git, puis relancez VSCode
+            </div>
+          </div>
+
+          <div class="problem-item">
+            <div class="problem-title">❌ "Please tell me who you are" (à la première utilisation)</div>
+            <div class="problem-solution">
+              <strong>Solution :</strong> Git a besoin de savoir qui vous êtes. Tapez :<br>
+              <span class="kbd">git config --global user.email "votre@email.com"</span><br>
+              <span class="kbd">git config --global user.name "Votre Nom"</span>
+            </div>
+          </div>
+
+          <div class="problem-item">
+            <div class="problem-title">❌ "J'ai oublié d'écrire un message de commit"</div>
+            <div class="problem-solution">
+              <strong>Solution :</strong><br>
+              → Toujours utiliser <strong>git commit -m "votre message"</strong><br>
+              → Le message doit décrire ce que vous avez fait : "Ajout du menu", "Correction du bug CSS"…
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-box" style="margin-top: 30px;">
+          <div class="highlight-title">👋 Besoin d'Aide ?</div>
+          <div class="highlight-text">
+            Si vous êtes bloqué, <strong>levez la main</strong> !<br>
+            On est là pour vous aider 😊
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5: Récap -->
+    <div class="slide intro-slide">
+      <div class="emoji">✅</div>
+      <h1 style="font-size: 56px;">Git & GitHub maîtrisés !</h1>
+      <p class="subtitle">Votre code est maintenant en sécurité</p>
+
+      <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 40px 60px; border-radius: 20px; margin-top: 50px; max-width: 850px;">
+        <div style="font-size: 24px; color: white; line-height: 1.8;">
+          <p><strong>✅ Vous savez la différence Git / GitHub</strong></p>
+          <p style="margin-top: 15px;"><strong>✅ Vous utilisez git add, commit, push</strong></p>
+          <p style="margin-top: 15px;"><strong>✅ Vous savez cloner un projet</strong></p>
+          <p style="margin-top: 15px;"><strong>✅ Vous gérez les erreurs courantes</strong></p>
+        </div>
+      </div>
+
+      <div style="margin-top: 60px; font-size: 32px; color: white; font-weight: bold;">
+        Votre code ne disparaîtra plus jamais ! 🎉
+      </div>
+    </div>
+
+  </div>
+
+  <div class="navigation">
+    <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">← Précédent</button>
+    <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Suivant →</button>
+  </div>
+
+  <script src="guideCodePen.js"></script>
+</body>
+</html>

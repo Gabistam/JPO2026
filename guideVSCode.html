@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guide VSCode - Prise en Main</title>
+  <link rel="stylesheet" href="guideCodePen.css">
+  <style>
+    .content-card::before {
+      background: linear-gradient(90deg, #0078d4, #005a9e, #40a9ff);
+      background-size: 200% 100%;
+      animation: gradient 3s linear infinite;
+    }
+    .section-title { color: #005a9e; }
+    .step-item { border-left-color: #0078d4; }
+    .step-number { background: #0078d4; }
+    .step-content h3 { color: #005a9e; }
+    .highlight-box {
+      background: linear-gradient(135deg, #e6f3ff, #bde0ff);
+      border-color: #0078d4;
+    }
+    .highlight-title { color: #005a9e; }
+    .highlight-text { color: #003d6b; }
+    body {
+      background: linear-gradient(135deg, #003d6b 0%, #0078d4 100%);
+    }
+    .zone-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin: 25px 0;
+    }
+    .zone-card {
+      background: #f0f7ff;
+      border: 2px solid #0078d4;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+    .zone-card .zone-emoji { font-size: 36px; margin-bottom: 10px; }
+    .zone-card .zone-title { color: #005a9e; font-weight: bold; font-size: 17px; margin-bottom: 6px; }
+    .zone-card .zone-desc { color: #4a6fa5; font-size: 14px; }
+    .shortcut-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    .shortcut-table th {
+      background: #0078d4; color: white; padding: 12px 16px; text-align: left; font-size: 16px;
+    }
+    .shortcut-table td { padding: 12px 16px; border-bottom: 1px solid #e2e8f0; font-size: 16px; }
+    .shortcut-table tr:nth-child(even) td { background: #f0f7ff; }
+    .kbd {
+      background: #1e293b; color: #e2e8f0; padding: 4px 10px; border-radius: 6px;
+      font-family: monospace; font-size: 15px;
+    }
+    .terminal-demo {
+      background: #1e293b; border-radius: 12px; overflow: hidden; margin: 20px 0;
+    }
+    .terminal-bar {
+      background: #0f172a; padding: 12px 20px; display: flex; align-items: center; gap: 8px;
+    }
+    .terminal-bar span { color: #94a3b8; font-size: 14px; margin-left: 10px; }
+    .terminal-body { padding: 20px; font-family: monospace; font-size: 15px; line-height: 1.8; }
+    .t-prompt { color: #34d399; }
+    .t-cmd { color: #e2e8f0; }
+    .t-output { color: #94a3b8; }
+    .t-comment { color: #60a5fa; }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="home-link">🏠 Accueil</a>
+
+  <div class="slide-indicator">
+    Slide <span id="currentSlide">1</span> / <span id="totalSlides">5</span>
+  </div>
+
+  <div class="container">
+
+    <!-- SLIDE 0: Introduction -->
+    <div class="slide active intro-slide">
+      <div class="emoji">💻</div>
+      <h1>VSCode</h1>
+      <p class="subtitle">Votre éditeur de code professionnel</p>
+
+      <div style="background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); padding: 30px 50px; border-radius: 20px; margin-top: 50px;">
+        <p style="font-size: 28px; color: white; font-weight: bold;">
+          Gratuit · Puissant · Utilisé partout dans le monde
+        </p>
+        <p style="font-size: 22px; color: rgba(255,255,255,0.9); margin-top: 20px;">
+          Le couteau suisse du développeur 🔧
+        </p>
+      </div>
+
+      <div style="margin-top: 50px; font-size: 20px; color: rgba(255,255,255,0.8);">
+        Appuyez sur → pour commencer
+      </div>
+    </div>
+
+    <!-- SLIDE 1: L'Interface -->
+    <div class="slide">
+      <div class="content-card">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="section-emoji">🖥️</span>
+            L'Interface VSCode
+          </h2>
+          <p class="section-subtitle">5 zones à connaître absolument</p>
+        </div>
+
+        <div class="zone-grid">
+          <div class="zone-card">
+            <div class="zone-emoji">📁</div>
+            <div class="zone-title">Explorateur</div>
+            <div class="zone-desc">Vos fichiers et dossiers, sur la gauche</div>
+          </div>
+          <div class="zone-card">
+            <div class="zone-emoji">✏️</div>
+            <div class="zone-title">Éditeur</div>
+            <div class="zone-desc">Là où vous écrivez votre code, au centre</div>
+          </div>
+          <div class="zone-card">
+            <div class="zone-emoji">🔍</div>
+            <div class="zone-title">Recherche</div>
+            <div class="zone-desc">Cherchez dans tout votre projet</div>
+          </div>
+          <div class="zone-card">
+            <div class="zone-emoji">🧩</div>
+            <div class="zone-title">Extensions</div>
+            <div class="zone-desc">Ajoutez des super-pouvoirs à VSCode</div>
+          </div>
+          <div class="zone-card">
+            <div class="zone-emoji">⬛</div>
+            <div class="zone-title">Terminal</div>
+            <div class="zone-desc">La ligne de commande intégrée (en bas)</div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <div class="highlight-title">🎯 Raccourci magique</div>
+          <div class="highlight-text">
+            <span style="font-family: monospace; font-size: 22px; background: #005a9e; color: white; padding: 4px 14px; border-radius: 8px;">Ctrl + Shift + P</span><br><br>
+            La <strong>palette de commandes</strong> : accès à TOUT dans VSCode en tapant un mot !
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: Ouvrir un projet -->
+    <div class="slide">
+      <div class="content-card">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="section-emoji">📂</span>
+            Ouvrir un Projet
+          </h2>
+          <p class="section-subtitle">Travailler avec des fichiers et dossiers</p>
+        </div>
+
+        <div class="steps-container">
+          <div class="step-item">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Ouvrir un dossier</h3>
+              <p><strong>Fichier → Ouvrir un dossier</strong> (ou glissez-déposez votre dossier dans VSCode)<br>
+              Toujours ouvrir le <strong>dossier entier</strong>, pas juste un fichier !</p>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Créer / modifier un fichier</h3>
+              <p>Cliquez sur l'icône <strong>+</strong> dans l'explorateur pour créer un fichier.<br>
+              Donnez-lui une extension : <strong>.html</strong>, <strong>.css</strong>, <strong>.js</strong></p>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Sauvegarder</h3>
+              <p>Appuyez sur <strong>Ctrl + S</strong> pour sauvegarder.<br>
+              Un point ● sur l'onglet = des modifications non sauvegardées !</p>
+            </div>
+          </div>
+        </div>
+
+        <table class="shortcut-table">
+          <tr>
+            <th>Action</th>
+            <th>Raccourci</th>
+          </tr>
+          <tr>
+            <td>Sauvegarder</td>
+            <td><span class="kbd">Ctrl + S</span></td>
+          </tr>
+          <tr>
+            <td>Annuler</td>
+            <td><span class="kbd">Ctrl + Z</span></td>
+          </tr>
+          <tr>
+            <td>Copier une ligne</td>
+            <td><span class="kbd">Shift + Alt + ↓</span></td>
+          </tr>
+          <tr>
+            <td>Chercher dans le fichier</td>
+            <td><span class="kbd">Ctrl + F</span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: Terminal intégré -->
+    <div class="slide">
+      <div class="content-card">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="section-emoji">⬛</span>
+            Le Terminal Intégré
+          </h2>
+          <p class="section-subtitle">Une console directement dans VSCode</p>
+        </div>
+
+        <div class="steps-container">
+          <div class="step-item">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Ouvrir le terminal</h3>
+              <p><strong>Terminal → Nouveau terminal</strong><br>ou avec le raccourci <span class="kbd">Ctrl + `</span> (la touche accent grave)</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Le terminal s'ouvre dans votre dossier</h3>
+              <p>Vous êtes <strong>automatiquement</strong> dans le dossier de votre projet. Pas besoin de naviguer !</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="color: #005a9e; font-size: 22px; margin: 20px 0 10px;">Commandes de base à connaître :</h3>
+
+        <div class="terminal-demo">
+          <div class="terminal-bar">
+            <div class="mockup-dot dot-red"></div>
+            <div class="mockup-dot dot-yellow"></div>
+            <div class="mockup-dot dot-green"></div>
+            <span>Terminal — bash</span>
+          </div>
+          <div class="terminal-body">
+            <div><span class="t-comment"># Voir où vous êtes</span></div>
+            <div><span class="t-prompt">$ </span><span class="t-cmd">pwd</span></div>
+            <div class="t-output">/home/etudiant/mon-projet</div>
+            <br>
+            <div><span class="t-comment"># Lister les fichiers du dossier</span></div>
+            <div><span class="t-prompt">$ </span><span class="t-cmd">ls</span></div>
+            <div class="t-output">index.html  style.css  script.js</div>
+            <br>
+            <div><span class="t-comment"># Aller dans un dossier</span></div>
+            <div><span class="t-prompt">$ </span><span class="t-cmd">cd mon-dossier</span></div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <div class="highlight-title">💡 Pourquoi le terminal ?</div>
+          <div class="highlight-text">
+            C'est ici que vous lancerez Git, installerez des outils, et exécuterez vos projets.<br>
+            <strong>Incontournable pour tout développeur !</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4: Problèmes fréquents -->
+    <div class="slide">
+      <div class="content-card">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="section-emoji">🆘</span>
+            Problèmes Fréquents
+          </h2>
+          <p class="section-subtitle">Solutions rapides aux soucis les plus courants</p>
+        </div>
+
+        <div class="problems-container">
+          <div class="problem-item">
+            <div class="problem-title">❌ "Je ne vois pas mes fichiers !"</div>
+            <div class="problem-solution">
+              <strong>Solution :</strong><br>
+              → Vous avez ouvert un <em>fichier</em> au lieu d'un <em>dossier</em><br>
+              → Faites <strong>Fichier → Ouvrir un dossier</strong> et sélectionnez le bon dossier
+            </div>
+          </div>
+
+          <div class="problem-item">
+            <div class="problem-title">❌ "Mon fichier a un point ● sur l'onglet"</div>
+            <div class="problem-solution">
+              <strong>Solution :</strong><br>
+              → Vous avez des modifications non sauvegardées<br>
+              → Appuyez sur <strong>Ctrl + S</strong> pour sauvegarder
+            </div>
+          </div>
+
+          <div class="problem-item">
+            <div class="problem-title">❌ "Le terminal ne s'ouvre pas"</div>
+            <div class="problem-solution">
+              <strong>Solution :</strong><br>
+              → Essayez via le menu <strong>Terminal → Nouveau terminal</strong><br>
+              → Ou vérifiez que vous avez bien ouvert un dossier (pas juste un fichier)
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-box" style="margin-top: 40px;">
+          <div class="highlight-title">👋 Besoin d'Aide ?</div>
+          <div class="highlight-text">
+            Si vous êtes bloqué, <strong>levez la main</strong> !<br>
+            On est là pour vous aider 😊
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5: Récap -->
+    <div class="slide intro-slide">
+      <div class="emoji">✅</div>
+      <h1 style="font-size: 56px;">VSCode maîtrisé !</h1>
+      <p class="subtitle">Vous êtes prêts à coder comme des pros</p>
+
+      <div style="background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); padding: 40px 60px; border-radius: 20px; margin-top: 50px; max-width: 800px;">
+        <div style="font-size: 24px; color: white; line-height: 1.8;">
+          <p><strong>✅ Vous connaissez l'interface</strong></p>
+          <p style="margin-top: 15px;"><strong>✅ Vous savez ouvrir et créer des fichiers</strong></p>
+          <p style="margin-top: 15px;"><strong>✅ Vous utilisez le terminal intégré</strong></p>
+          <p style="margin-top: 15px;"><strong>✅ Vous gérez les problèmes courants</strong></p>
+        </div>
+      </div>
+
+      <div style="margin-top: 60px; font-size: 32px; color: white; font-weight: bold;">
+        Cap sur Git maintenant ! 🚀
+      </div>
+    </div>
+
+  </div>
+
+  <div class="navigation">
+    <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">← Précédent</button>
+    <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Suivant →</button>
+  </div>
+
+  <script src="guideCodePen.js"></script>
+</body>
+</html>
